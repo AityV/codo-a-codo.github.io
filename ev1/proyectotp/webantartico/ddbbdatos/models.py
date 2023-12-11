@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+
 class Persona(models.Model):
     IdPersona=models.IntegerField()
     nombre = models.CharField(max_length=50)
