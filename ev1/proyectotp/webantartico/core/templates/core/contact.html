@@ -1,0 +1,97 @@
+{% extends "core/base.html" %}
+
+<title>{% block title %}Contacto{% endblock %}</title>
+
+{% load static %}
+<link rel="stylesheet" href= "{% block styles %} {% static 'core/css/contact.css' %} {% endblock %}">
+
+<script src="{% static 'core/js/api.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7pQ2MMwCv9LzxPcBdfXWLWnN919NNHrA&callback=initMap" async defer></script>
+
+{% block index %} target="_blank" {% endblock%}
+{% block contact %} {% endblock %}
+  
+<body class="hero">
+   {% block section %}
+    <main  id="contact">
+        
+        <section class="form_subt">
+            <p>Si tenés alguna duda o consulta, no dudes en ponerte en contacto con nosotros. Estamos acá para responder a todas tus preguntas y brindarte la información que necesitas para planificar tu próximo viaje. Ya sea que desees obtener detalles sobre nuestros paquetes turísticos, necesites asesoramiento sobre destinos o tengas cualquier otra inquietud.</p>
+        </section>
+        
+        <section id="form_container">
+            <form id="form">
+                <div class="input_container">
+                    <label for="firstname">Nombre</label>
+                    <input
+                        class="input_form"
+                        id="firstname"
+                        name="firstname"
+                        type="text"
+                        placeholder="Ingrese su nombre"
+                    />
+                    <span id="firstnameError" class="error"></span>
+                </div>
+                <div class="input_container">
+                    <label for="surname">Apellido</label>
+                    <input
+                        class="input_form"
+                        id="surname"
+                        name="surname"
+                        type="text"
+                        placeholder="Ingrese su apellido"
+                    />
+                    <span id="surnameError" class="error"></span>
+                </div>
+                <div class="input_container">
+                    <label for="email">Email</label>
+                    <input
+                        class="input_form"
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="Ingrese su email"
+                    />
+                    <span id="emailError" class="error"></span>
+                </div>
+                <div class="input_container">
+                    <label for="tel">Telefono</label>
+                    <input
+                        class="input_form"
+                        id="tel"
+                        name="tel"
+                        type="tel"
+                        placeholder="Ingrese su telefono"
+                    />
+                    <span id="telError" class="error"></span>
+                </div>
+
+                <input id="submit_button" type="submit" value="Enviar" />
+            </form>
+        </section>
+    </main>
+    {% endblock %}
+
+    {% block main %} {% endblock %}
+    
+    {% block footer_index %} target="_blank" {% endblock%}
+    {% block footer_contact %} {% endblock %}
+    
+    {% block modal %} {% endblock %}
+
+    <footer class="footer">
+        
+        {% block footer %}
+        <div id="map"></div>
+        {% endblock %}
+               
+    </footer>
+
+    {% block script %}
+    <script src="{% static 'core/js/menu.js' %}"></script>
+    <script src="{% static 'core/js/validation.js' %}"></script>
+    {% endblock %}
+
+</body>
+</html>
+
