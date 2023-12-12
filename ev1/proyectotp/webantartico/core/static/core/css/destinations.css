@@ -291,7 +291,7 @@ main h1 {
 /* Media queries */
 
 @media (max-width: 800px) {
-      .nav_menu {
+    .nav_menu {
         display: block;
     }
 

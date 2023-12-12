@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="{% block styles %}{% static 'core/css/index.css' %}{% endblock %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    {% block script_header %} {% endblock %}
+    
     <meta name="theme-color" content="#2091f9">
 
     <!-- Google -->
@@ -58,7 +60,7 @@
             <h1 class="hero_title">Antártico Viajes</h1>
             <p class="hero_paragraph">"Somos tu puerta de entrada a las maravillas de nuestro hermoso país. En Antártico Viajes nos enorgullece ofrecerte experiencias únicas y emocionantes para explorar los tesoros naturales, culturales y gastronómicos de nuestra Argentina."</p>
             <a href="{% url 'contact' %}" target="_blank" class="cta">Contáctanos</a> <!-- Redirige a Contacto-->
-        {% endblock %}</section>
+        </section>{% endblock %}
     </header>
 
    
@@ -251,7 +253,7 @@
         </div>
     {% endblock %}</section>
 
-    <footer class="footer"> {% block foot %}
+    <footer class="footer">{% block foot %} 
         <section class="footer_container container">
             <nav class="nav nav--footer">
                 <h2 class="footer_title">Antártico Viajes</h2>
@@ -272,13 +274,15 @@
                 </ul>
             </nav>
 
-            <form class="footer_form">{% block footer %}
+            {% block footer %}<form class="footer_form">
+                
                 <h2 class="footer_newsletter">Suscribite al newsletter</h2>
                 <div class="footer_inputs">
                     <input type="email" placeholder="Email:" class="footer_input">
                     <input type="submit" value="Suscribite" class="footer_submit">
                 </div>
-            {% endblock %}</form>
+                
+            </form>{% endblock %}
         </section>
 
         <section class="footer_copy container">

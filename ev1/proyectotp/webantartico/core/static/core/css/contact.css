@@ -353,7 +353,7 @@ input#submit_button {
 
 @media (max-width: 600px) {
 	.nav_logo img{
-        display: none;
+        display:none;
     }
     
     .footer_title {

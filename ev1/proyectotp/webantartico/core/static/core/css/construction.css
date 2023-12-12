@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 * {
-    width: 100%;
-    height: 100%;
-    font-family: 'Poppins', sans-serif;
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 :root{
@@ -14,7 +16,7 @@
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  overflow: hidden;
+  overflow: hidden; 
   padding: var(--padding-container);
 }
 
@@ -71,7 +73,7 @@ header{
   overflow: hidden;
   position: absolute;
   top: 30px;
-  left: 30px;
+  left: 30px; 
 }
 
 .nav_link {
@@ -111,7 +113,70 @@ header{
   display: var(--show, none);
 }
 
-/* faltan media queries */
+/* Media queries */
+
+@media (max-width: 800px) {
+
+  body {
+    background-size:cover;    
+  }
+
+  .nav_menu {
+    display: block; 
+    max-width: max-content; 
+  }
+
+  .nav_link--menu {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.9);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: .7s opacity;
+  }
+
+  .nav_link--show {
+    --show: block;
+    text-align: center;
+    margin: 0 auto;
+    opacity: 1;
+    pointer-events: unset;
+  }
+
+  .nav_link--menu li a:hover{
+    font-size: 40px;
+    font-weight: 500;
+    color: #2091f9;
+  }
+
+  .nav_items {
+    margin-top: 45px;
+  }
+
+  .nav_close {
+    width: 30px;
+    cursor: pointer;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  body {
+    background-size:100% 100%;
+  }
+
+}
+
 
 /* Scrollbar */
 

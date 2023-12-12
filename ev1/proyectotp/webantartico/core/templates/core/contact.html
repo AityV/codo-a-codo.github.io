@@ -3,10 +3,13 @@
 <title>{% block title %}Contacto{% endblock %}</title>
 
 {% load static %}
+
 <link rel="stylesheet" href= "{% block styles %} {% static 'core/css/contact.css' %} {% endblock %}">
 
-<script src="{% static 'core/js/api.js' %}"></script>
+{% block script_header%} 
+<script src="{% static 'core/js/api.js' %}"></script> 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7pQ2MMwCv9LzxPcBdfXWLWnN919NNHrA&callback=initMap" async defer></script>
+{% endblock %}
 
 {% block index %} target="_blank" {% endblock%}
 {% block contact %} {% endblock %}
@@ -78,14 +81,8 @@
     {% block footer_contact %} {% endblock %}
     
     {% block modal %} {% endblock %}
-
-    <footer class="footer">
-        
-        {% block footer %}
-        <div id="map"></div>
-        {% endblock %}
-               
-    </footer>
+     
+    {% block footer %} <div id="map"></div> {% endblock %} 
 
     {% block script %}
     <script src="{% static 'core/js/menu.js' %}"></script>
