@@ -1,4 +1,5 @@
 from django.db import models
+import sqlite3
 
 # Create your models here.
 class Persona(models.Model):
@@ -6,7 +7,7 @@ class Persona(models.Model):
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     correo = models.CharField(max_length=50)
-    IdTelefono = models.IntegerField()
+    IdTelefono = models.IntegerField(Telefono, on_delete=models.CASCADE)
     
     class Telefono(models.Model):
         IdTelefono = models.IntegerField()
