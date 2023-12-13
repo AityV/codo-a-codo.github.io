@@ -10,8 +10,5 @@ def destinations(request):
 def packages(request):
     return render(request, "core/packages.html")
 
-def contact(request):
-    return render(request, "core/contact.html")
-
 def construction(request):
     return render(request, "core/construction.html")

@@ -7,12 +7,7 @@ class Persona(models.Model):
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     correo = models.CharField(max_length=50)
-    IdTelefono = models.IntegerField()
-    
+    telefono = models.CharField(max_length=20)
 
-    class Telefono(models.Model):
-        IdTelefono = models.IntegerField()
-        telefono = models.CharField(max_length=15)
-        codigoArea = models.CharField(max_length=10)
-       
-   
+    class Meta:
+        ordering = ['IdPersona']
