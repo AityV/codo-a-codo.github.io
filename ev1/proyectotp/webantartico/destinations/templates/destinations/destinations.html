@@ -1,0 +1,52 @@
+{% extends "core/base.html" %}
+
+<title>{% block title %}Destinos{%endblock%}</title>
+
+{% load static %}
+
+<link rel="stylesheet" href="{% block styles %} {% static 'core/css/destinations.css' %} {% endblock %}">
+
+{% block index %} target="_blank" {% endblock%}
+{% block destinations %} {% endblock %}
+
+{% block section %} {% endblock %}
+
+<body>
+    
+    <main>{% block main %}
+        
+
+        <h1>NUESTROS DESTINOS</h1>
+        
+        <section class="main">
+            {% for Flip_card in Flip_cards %}<section class="card">
+                <div class="face front">
+                    <img src="{{Flip_card.image_front.url}}" alt="mina clavero">
+                    <h3>{{Flip_card.title_front}}</h3>
+                </div>
+
+                <div class="face back">
+                    <h3>{{Flip_card.title_back}}</h3>
+                    <p>{{Flip_card.description_back}}</p>
+                    <div class="link_face back">
+                        <a href="{{Flip_card.link_back}}" target="_blank">Más información</a> 
+                    </div>
+                </div>
+            </section>
+            {% endfor %}   
+
+        </section> 
+                    
+    {% endblock %}</main>
+
+    {% block footer_index %} target="_blank" {% endblock%}
+    {% block footer_destinations %} {% endblock %}
+
+    {% block modal %}{% endblock %}
+
+    {% block script %}       
+    <script src="{% static 'core/js/menu.js' %}"></script>
+    {% endblock %} 
+
+</body>
+</html>

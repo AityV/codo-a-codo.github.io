@@ -17,15 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from core import views as core_views
-from ddbbdatos import views as ddbbdatos_views
+from destinations import views as destinations_views
 from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', core_views.index, name='index'),
-    path('destinations', core_views.destinations, name='destinations'),
+    path('destinations', destinations_views.destinations, name='destinations'),
     path('packages', core_views.packages, name='packages'),
-    path('contact', ddbbdatos_views.contact, name='contact'),
+    path('contact', core_views.contact, name='contact'),
     path('construction', core_views.construction, name='construction')
 ]
 
